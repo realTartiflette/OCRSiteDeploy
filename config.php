@@ -5,14 +5,15 @@ use Illuminate\Support\Str;
 return [
     'production' => false,
     'baseUrl' => '',
-    'title' => 'Jigsaw starter ',
+    'title' => 'DevForAll',
     'description' => 'Website description.',
-    'collections' => [],
-    'selected' => function ($page, $section) {
-        if ($page->getPath() == null && $section == null) {
-            return true;
-        }
-        
-        return Str::contains($page->getPath(), $section);
-    },
+    'collections' => [
+        'projects' => [
+            'sort' => 'created_at',  
+        ],
+        'projectsRef' => [
+            'sort' => 'created_at',  
+        ]
+    ],
+    'i' => '1',
 ];
